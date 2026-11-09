@@ -1,0 +1,15 @@
+# local database
+db.sqlite3
+db.sqlite3-journal
+
+# Upload user files
+
+__pycache__/
+
+# Collected Production staticfiles
+
+staticfiles/
+
+# Editor and operating system files
+
+.vscode/

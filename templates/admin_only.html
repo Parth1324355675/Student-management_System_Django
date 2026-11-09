@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>Admin student Records</p>
+{% for student in students %}
+
+<p>{{ student.name }} |
+    {{student.email}} |
+    {{ student.marks }}
+
+</p>
+
+{% empty %}
+<p>No student found</p>
+{% endfor %}
+    
+    
+{% endblock  %}
+    

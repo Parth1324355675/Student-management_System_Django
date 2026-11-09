@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>List View(Class Based view) for displaying students</h2>
+
+{% for student in students %}
+
+<p>
+
+    {% if student.profile_image %}
+    <img src="{{ student.profile_image.url }}" alt="{{ student.name }}">
+    {% else %}
+       No profile image uploaded
+       
+    {% endif %}
+
+    <p>{{ student.name }}</p>
+    <p>{{ student.age }}</p>
+    <p>{{ student.email }}</p>
+    <p>{{ student.course.name }}</p>
+    <p>{{ student.course.fees }}</p>
+        
+    <a href="{% url 'student_detail' student.pk %}">{{ student.name }}</a>
+    <a href="{% url 'student_edit_cbv' student.pk %}">Edit</a>
+    <a href="{% url 'student_delete_cbv' student.pk %}">Delete</a>
+    
+    
+</p>
+    
+{% empty %}
+<p>No student found</p> 
+
+{% endfor %}
+    
+    
+{% endblock  %}
+    

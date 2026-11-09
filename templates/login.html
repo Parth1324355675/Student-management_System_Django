@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2>Login</h2>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <input type="hidden" name="next" value="{{ request.GET.next }}">
+
+    <label for="">Username:</label>
+    <input type="text" name="username" id="">
+    <br><br>
+    <label for="">Password:</label>
+    <input type="password" name="password" id="">
+    <br><br>
+
+    <button type="submit">Login</button>
+
+</form>
+    
+{% endblock  %}
+    

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ skill.name }}</h2>
+<h3>Student with this skill</h3>
+
+
+{% for student in students %}
+
+<p>z
+    {{ student.name }}-
+    {{ student.email }}
+</p>
+
+{% empty %}
+
+<p>No student have this skill.</p>
+    
+{% endfor %}
+    
+{% endblock  %}
+    

@@ -1,0 +1,403 @@
+{% extends 'base.html' %}
+{% block title %}Student Dashboard | Student Portal{% endblock %}
+
+{% block content %}
+
+
+
+
+
+    
+
+
+<!-- {% if login_message %}
+<p>{{ login_message }}</p>
+
+{% endif %}
+
+<h2>Student Result</h2>
+
+
+<form  method="GET"> -->
+    <!-- <input type="text" name="search" placeholder="Search student..." value="{{search|default:''}}"> -->
+    
+    <!-- <input type="text" name="search" placeholder="Search student..." value="{{search}}">
+    <input type="hidden" name="marks"  value="{{marks_filter}}">
+    <input type="hidden" name="city"  value="{{city_filter}}">
+    <button type="submit">Search</button>
+</form> -->
+
+
+
+
+
+<!-- ### Hidden Input in Django Forms
+
+`<input type="hidden">` is used to **send a value with the form without showing it to the user**.
+
+#### Why do we use it?
+
+When we have multiple filters, we want to **keep the existing filters** while applying a new filter.
+
+Example:
+
+```html
+<input type="hidden" name="marks" value="{{ marks_filter }}">
+<input type="hidden" name="city" value="{{ city_filter }}">
+```
+
+If the current filters are:
+
+```text
+search = Rahul
+marks = 80
+city = Delhi
+```
+
+and the user changes the search to `Amit`, the hidden inputs make sure Django receives:
+
+```text
+?search=Amit&marks=80&city=Delhi
+```
+
+Without hidden inputs, Django would receive only:
+
+```text
+?search=Amit
+```
+
+So the other filters would be lost.
+
+### Simple rule to remember
+
+**Visible input → user changes this value**
+
+**Hidden input → keep/send an existing value**
+
+For example, in the Search form:
+
+```text
+search → visible
+marks  → hidden
+city   → hidden
+```
+
+Meaning:
+
+> Change the search, but keep the marks and city filters. -->
+
+
+
+
+
+
+
+<!-- FOR CITY_FILTER -->
+
+<!-- <form method="GET">
+    <input type="hidden" name="search" value="{{search}}">
+    <input type="hidden" name="marks" value="{{marks_filter}}">
+    
+    <select name="city">
+        <option value="">All cities</option>
+        
+        {% for city in cities %}
+        <option value="{{city}}"
+        {% if city == city_filter %}selected{% endif %}>
+        {{city}}
+    </option>
+    
+    
+    
+    
+    
+    {% endfor %}
+    
+</select>
+<button type="submit">Filter City</button>
+</form>
+
+
+
+
+
+<div class="filters">
+    <a href="{% url 'home' %}">All students</a>
+    
+    {% comment %}
+    <a href="?search={{search}}&city={{city_filter}}">All students</a>
+    
+    {% endcomment %}
+    
+    <a href="?search={{search}}&city={{city_filter}}&marks=80">Marks 80+</a>
+    <a href="?search={{search}}&city={{city_filter}}&marks=60">Marks 60+</a>
+    <a href="?search={{search}}&city={{city_filter}}&marks=40">Marks 40+</a>
+    <a href="?search={{search}}&city={{city_filter}}&marks=below40">Below 40</a>
+    <a href="{% url 'home' %}">Clear Filters</a>
+</div> -->
+<!-- search,city,marks are parameters name -->
+
+
+<!-- <h2>Student Result</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sno.</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Marks</th>
+            <th>Result</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    
+    
+    <tbody>
+        
+        {% for student in students %}
+        
+        <tr>
+            <td>{{forloop.counter0}}</td>
+            <td>{{student.id}}</td> -->
+
+
+
+            <!-- <td>{{student.name|upper}}</td> -->
+            <!-- <td>{{student.name|lower}}</td> -->
+
+
+
+            <!-- <td>{{student.name|title}}
+                
+                {% if forloop.first %}
+                (First)
+                {% endif %}
+                
+                
+            </td>
+            
+            <td>{{student.age}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.phone|default:"Non available"}}</td>
+            <td>{{student.marks}}</td> -->
+            <!-- <td>{{student.marks|add:"5"}}</td> -->
+            
+            <!-- <td>
+                {% if student.marks > 80 %}
+                Excellent
+                
+                {% elif student.marks > 60 %}
+                Good
+                
+                {% elif student.marks > 40 %}
+                Pass
+                
+                {% else %}
+                Fail
+                
+                {% endif %}
+                
+            </td>
+            
+            <td>{{student.city}}</td>
+            <td>
+                <a href="{% url 'edit_student' student.id %}">Edit</a>
+                <a href="{% url 'delete_student' student.id %}">Delete</a>
+                
+            </td>
+            
+        </tr>
+        
+        
+        {% empty %}
+        <tr>
+            <td colspan="10">No student found</td>
+        </tr>
+        
+        {% endfor %}
+        
+    </tbody>
+</table> -->
+
+
+<!-- PAGINATION FOR SHOWING 5 STUDENTS IN EVERY PAGE -->
+
+<!-- <div class="pagination">
+    
+    {% if students.has_previous %}
+    <a href="?search={{ search }}&marks={{ marks_filter }}&city={{ city_filter }}&page=1">First</a>
+    <a href="?search={{ search }}&marks={{ marks_filter }}&city={{ city_filter }}&page={{students.previous_page_number}}">Previous</a>
+    
+    {% endif %}
+    
+    <span>
+        Pages {{students.number}} of {{students.paginator.num_pages}}
+    </span>
+    
+    
+    {% if students.has_next %}
+    <a href="?search={{ search }}&marks={{ marks_filter }}&city={{ city_filter }}&page={{students.next_page_number}}">Next</a>
+    <a href="?search={{ search }}&marks={{ marks_filter }}&city={{ city_filter }}&page={{students.paginator.num_pages}}">Last</a>
+    
+    {% endif %}
+    
+    
+    
+    
+</div>
+ -->
+
+
+
+
+
+
+<section class="dashboard-heading">
+    <div>
+        <h1>Student Dashboard</h1>
+        <p>Manage student records, search details, and review academic results.</p>
+    </div>
+
+    <a class="btn" href="{% url 'add_student' %}">+ Add Student</a>
+</section>
+
+{% if login_message %}
+    <div class="message info">{{ login_message }}</div>
+{% endif %}
+
+<section class="dashboard-panel">
+    <h2>Search and Filter Students</h2>
+
+    <form method="GET" class="dashboard-search-form">
+        <input
+            type="text"
+            name="search"
+            placeholder="Search by student name..."
+            value="{{ search|default:'' }}"
+        >
+
+        <input type="hidden" name="marks" value="{{ marks_filter|default:'' }}">
+        <input type="hidden" name="city" value="{{ city_filter|default:'' }}">
+
+        <button type="submit">Search</button>
+    </form>
+
+    <form method="GET" class="dashboard-filter-form">
+        <input type="hidden" name="search" value="{{ search|default:'' }}">
+        <input type="hidden" name="marks" value="{{ marks_filter|default:'' }}">
+
+        <select name="city">
+            <option value="">All Cities</option>
+            {% for city in cities %}
+                <option value="{{ city }}" {% if city == city_filter %}selected{% endif %}>
+                    {{ city }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Apply City Filter</button>
+    </form>
+
+    <div class="filters">
+        <a href="{% url 'home' %}">All Students</a>
+        <a href="?search={{ search|urlencode }}&city={{ city_filter|urlencode }}&marks=80">Marks 80+</a>
+        <a href="?search={{ search|urlencode }}&city={{ city_filter|urlencode }}&marks=60">Marks 60+</a>
+        <a href="?search={{ search|urlencode }}&city={{ city_filter|urlencode }}&marks=below40">Below 40</a>
+        <a href="{% url 'home' %}">Clear Filters</a>
+    </div>
+</section>
+
+<section class="dashboard-panel">
+    <div class="table-heading">
+        <div>
+            <h2>Student Records</h2>
+            <p>View and manage your student information.</p>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="student-table">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Marks</th>
+                    <th>Result</th>
+                    <th>City</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ student.id }}</td>
+                        <td>
+                            <strong>{{ student.name|title }}</strong>
+                            {% if forloop.first %}
+                                <span class="student-first-badge">First</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ student.age }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.phone|default:"Not available" }}</td>
+                        <td>{{ student.marks }}</td>
+                        <td>
+                            {% if student.marks >= 80 %}
+                                <span class="result-badge excellent">Excellent</span>
+                            {% elif student.marks >= 60 %}
+                                <span class="result-badge good">Good</span>
+                            {% elif student.marks >= 40 %}
+                                <span class="result-badge pass">Pass</span>
+                            {% else %}
+                                <span class="result-badge fail">Fail</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ student.city|title }}</td>
+                        <td class="student-actions">
+                            <a class="action-view" href="{% url 'student_detail' student.id %}">View</a>
+                            <a class="action-edit" href="{% url 'edit_student' student.id %}">Edit</a>
+                            <a class="action-delete" href="{% url 'delete_student' student.id %}">Delete</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="10" class="empty-state">
+                            <h3>No students found</h3>
+                            <p>Try changing your search or filters, or add a new student.</p>
+                            <a class="btn" href="{% url 'add_student' %}">+ Add Student</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% if students.paginator.num_pages > 1 %}
+    <div class="pagination">
+        {% if students.has_previous %}
+            <a href="?search={{ search|urlencode }}&marks={{ marks_filter|urlencode }}&city={{ city_filter|urlencode }}&page=1">First</a>
+            <a href="?search={{ search|urlencode }}&marks={{ marks_filter|urlencode }}&city={{ city_filter|urlencode }}&page={{ students.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span>Page {{ students.number }} of {{ students.paginator.num_pages }}</span>
+
+        {% if students.has_next %}
+            <a href="?search={{ search|urlencode }}&marks={{ marks_filter|urlencode }}&city={{ city_filter|urlencode }}&page={{ students.next_page_number }}">Next</a>
+            <a href="?search={{ search|urlencode }}&marks={{ marks_filter|urlencode }}&city={{ city_filter|urlencode }}&page={{ students.paginator.num_pages }}">Last</a>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% endblock %}
