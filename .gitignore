@@ -1,6 +1,6 @@
 # local database
 db.sqlite3
-db.sqlite3-journal
+
 
 # Upload user files
 
@@ -8,7 +8,7 @@ __pycache__/
 
 # Collected Production staticfiles
 
-staticfiles/
+media/
 
 # Editor and operating system files
 
