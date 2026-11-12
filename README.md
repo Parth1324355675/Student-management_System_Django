@@ -1,4 +1,4 @@
-# Student Management Portal
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6f6c6b35-850b-4a91-b47e-17f4e60eacb0" /># Student Management Portal
 
 A Django-based Student Management Portal for managing student records, courses, skills, and academic performance through a responsive web interface.
 
@@ -68,8 +68,8 @@ student-management-portal/
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd <YOUR_PROJECT_FOLDER>
+git clone https://github.com/Parth1324355675/Student-management_System_Django
+cd StudentPortal
 ```
 
 Replace the placeholders with your GitHub repository URL and local folder name.
